@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Yantramanav&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Albenus| Internship</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        font-family: Lato;
+      }
+
+      .holder {
+        display: flex;
+        flex-flow: row Wrap;
+        align-items: flex-start;
+        background-color: #5271fa;
+        background-image: linear-gradient(180deg, #89b1f5 0%, #e0f8ff 100%);
+
+      }
+
+      div.main {
+        margin: 25px;
+        width: 280px;
+        cursor: pointer;
+        height: 450px;
+        background-color: white;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.445),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        float: left;
+        padding: 10px;
+        object-fit: contain;
+      }
+
+      .back1 {
+        background-color: #F2CCF7;
+        background-image: linear-gradient(180deg, #F2CCF7 0%, #89d2f5 100%);
+
+      }
+
+      .page {
+        display: flex;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+      }
+
+      .main1 {
+        background-color: white;
+        height: 650px;
+        width: 350px;
+        border: 5px solid white;
+        border-radius: 15px;
+        margin: 40px auto 40px;
+        background-color: white;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.445),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        float: center;
+        padding: 5px;
+        object-fit: contain;
+      }
+
+      :root {
+        --surface-color: white;
+        --curve: 40;
+      }
+
+      .information {
+        margin: 15px;
+        text-align: center;
+      }
+
+      .signupSection {
+        background-color: #26272b;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 450px;
+        text-align: center;
+        display: flex;
+        color: white;
+        box-shadow: 3px 10px 20px 5px rgba(0, 0, 0, 0.5);
+      }
+
+      .info {
+        width: 50%;
+        background: rgba(20, 20, 20, 0.8);
+        padding: 30px 0;
+      }
+
+      .info h2 {
+        padding-top: 30px;
+        font-weight: 300;
+        color: white;
+      }
+
+      .info p {
+        font-size: 15px;
+        border: none;
+        padding: 10px;
+      }
+
+      .signupForm {
+        width: 60%;
+        padding: 30px 0;
+        transition: 0.2s;
+      }
+
+      .signupForm h2 {
+        font-weight: 300;
+      }
+
+      .inputFields {
+        margin: 15px 0;
+        font-size: 15px;
+        padding: 10px;
+        width: 250px;
+        border: 1px solid #0ab4b4;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        background: rgba(20, 20, 20, 0.2);
+        color: white;
+        outline: none;
+      }
+
+      textarea {
+        margin: 15px 0;
+        font-size: 16px;
+        padding: 10px;
+        width: 250px;
+        border: 1px solid #0ab4b4;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        background: rgba(20, 20, 20, 0.2);
+        color: white;
+        outline: none;
+        resize: none;
+      }
+
+      .noBullet {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      #join-btn {
+        border: 1px solid #0ab4b4;
+        background: rgba(20, 20, 20, 0.6);
+        font-size: 18px;
+        color: white;
+        margin-top: 20px;
+        padding: 10px 50px;
+        cursor: pointer;
+        transition: 0.4s;
+      }
+
+      #join-btn:hover {
+        background: rgba(20, 20, 20, 0.8);
+        padding: 10px 80px;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin: 0;
+        padding: 8rem 10vw;
+        list-style-type: none;
+      }
+
+      .card {
+        position: relative;
+        display: block;
+        height: 100%;
+        border-radius: calc(var(--curve) * 1px);
+        overflow: hidden;
+        text-decoration: none;
+        border: 1px solid rgba(57, 172, 226, 0.637);
+      }
+
+      .card__image {
+        width: 100%;
+        height: auto;
+      }
+
+      .card__overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        border-radius: calc(var(--curve) * 1px);
+        background-color: var(--surface-color);
+        transform: translateY(100%);
+        transition: .2s ease-in-out;
+      }
+
+      .card:hover .card__overlay {
+        transform: translateY(0);
+      }
+
+      .card__header {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 2em;
+        padding: 2em;
+        border-radius: calc(var(--curve) * 1px) 0 0 0;
+        border: 1px solid lightblue;
+        background-color: var(--surface-color);
+        transform: translateY(-100%);
+        transition: .2s ease-in-out;
+      }
+
+      .card__arc {
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        bottom: 100%;
+        right: 0;
+        z-index: 1;
+      }
+
+      .card__arc path {
+        fill: var(--surface-color);
+      }
+
+      .card:hover .card__header {
+        transform: translateY(0);
+        border-bottom: none;
+      }
+
+      .card__thumb {
+        flex-shrink: 0;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+      }
+
+      .card__title {
+        font-size: 1em;
+        margin: 0 0 .3em;
+        color: #6A515E;
+      }
+
+      .card__tagline {
+        display: block;
+        margin: 1em 0;
+        font-family: "MockFlowFont";
+        font-size: .8em;
+        color: black;
+      }
+
+      .card__status {
+        font-size: .8em;
+        color: #5c3548;
+      }
+
+      .fa {
+        padding: 20px;
+        font-size: 20px;
+        width: 10px;
+        text-align: center;
+        text-decoration: none;
+        margin: 5px 2px;
+        border-radius: 50%;
+      }
+
+      .fa:hover {
+        opacity: 0.7;
+      }
+
+      .fa-facebook {
+        background: #3B5998;
+        color: white;
+      }
+
+      .fa-twitter {
+        background: #55ACEE;
+        color: white;
+      }
+
+      .fa-linkedin {
+        background: #007bb5;
+        color: white;
+      }
+
+      .card__description {
+        padding: 0 2em 2em;
+        margin: 0;
+        color: #5c3548;
+        font-family: Lato;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+        border-bottom: 2px solid rgba(57, 172, 226, 0.637);
+      }
+
+      header {
+        background-color: white;
+        padding: 15px;
+      }
+
+      .albenus_icon {
+        display: inline;
+        width: 150px;
+        height: 35px;
+        margin-left: 10%;
+        object-fit: contain;
+        cursor: pointer;
+        border: none;
+      }
+
+      .borderless {
+        border: none;
+      }
+
+      img {
+        object-fit: contain;
+        width: 100%;
+        height: 250px;
+        background-color: white;
+        border: 1px solid lightgrey;
+      }
+
+      div.frame div.img img {
+        border: none;
+        width: 90px;
+        height: 90px;
+        background-color: transparent;
+        opacity: 0.5;
+        margin-left: 70px;
+      }
+
+      div.frame div.img img:hover {
+        opacity: 1;
+      }
+
+      .file {
+        object-fit: cover;
+        object-position: 80% 100%;
+      }
+
+      div.container {
+        text-align: left;
+        padding: 10px 20px;
+      }
+
+      div.container p {
+        border-bottom: 2px solid black;
+        font-family: Lato;
+      }
+
+      footer div.container {
+        display: inline-block;
+      }
+
+      h1 {
+        color: rgb(9, 62, 161);
+        font-family: Yantramanav;
+        text-align: center;
+        border-radius: 50px;
+        border-bottom: 2px solid rgba(57, 172, 226, 0.637);
+        border-top: 2px solid rgba(57, 172, 226, 0.637);
+        margin: 10px auto 10px;
+        font-size: 30px;
+      }
+
+      h2 {
+        color: rgb(9, 62, 161);
+        text-align: center;
+      }
+
+      div.container1 {
+        text-align: left;
+        padding: 10px 20px;
+        overflow: hidden;
+      }
+
+      .holder::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+
+      a[type="submit"]:link,
+      a[type="submit"]:visited {
+        color: black;
+        background-color: rgba(85, 193, 243, 0.226);
+        padding: 14px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        border-radius: 50px;
+      }
+
+      a[type="submit"]:hover,
+      a[type="submit"]:active {
+        border-radius: 50px;
+        border-left: 2px solid rgba(57, 172, 226, 0.637);
+        border-right: 2px solid rgba(57, 172, 226, 0.637);
+      }
+
+      .topnav {
+        overflow: hidden;
+        background-color: white;
+        display: inline;
+      }
+
+      .topnav a {
+        float: right;
+        display: block;
+        color: black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 15px;
+        border-radius: 50px;
+      }
+
+      .active {
+        background-color: rgba(57, 172, 226, 0.733);
+        color: white;
+      }
+
+      .topnav .icon {
+        display: none;
+      }
+
+      .topnav a:hover {
+        background-color: white;
+        border-radius: 50px;
+        border-bottom: 2px solid rgba(57, 172, 226, 0.637);
+        border-top: 2px solid rgba(57, 172, 226, 0.637);
+      }
+
+      div.frame {
+        margin: 30px 50px 10px;
+        width: 250px;
+        display: inline-block;
+        padding: 10px;
+        object-fit: contain;
+        text-overflow: visible;
+      }
+
+      section {
+        margin-left: 8%;
+      }
+
+      .grad {
+        background: #e0f8ff;
+        background: -moz-linear-gradient(top, #e0f8ff 0, #fff0e5 100%);
+        background: -webkit-linear-gradient(top, #e0f8ff 0, #fff0e5 100%);
+        background: linear-gradient(to bottom, #e0f8ff 0, #fff0e5 100%);
+      }
+
+      .words {
+        font-family: Lato;
+        font-size: 15px;
+        text-align: center;
+        font-weight: bold;
+        letter-spacing: 0.1em;
+        color: rgb(9, 62, 161);
+        text-overflow: visible;
+      }
+
+      .desc {
+        font-family: Lato;
+        font-size: 13px;
+        text-align: center;
+        letter-spacing: 0.1em;
+        text-overflow: visible;
+      }
+
+      .site-footer:not(.footer_bottom) {
+        background-color: #4158D0;
+        background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+        padding: 15px 0 20px;
+        font-size: 15px;
+        line-height: 24px;
+        color: #737373;
+        display: block;
+        list-style-type: '>';
+      }
+
+      .site-footer hr {
+        border-top-color: #bbb;
+        opacity: 0.5;
+      }
+
+      .site-footer hr.small {
+        margin: 20px 0;
+      }
+
+      .row {
+        display: flex;
+        flex-flow: row Wrap;
+        align-items: flex-start;
+        height: 210px;
+      }
+
+      .back {
+        background-color: #F2CCF7;
+        background-image: linear-gradient(0deg, #F2CCF7 0%, #fff0e5 64%);
+
+      }
+
+      .site-footer h6 {
+        color: #fff;
+        font-size: 16px;
+        text-transform: uppercase;
+        margin-top: 5px;
+        letter-spacing: 2px;
+      }
+
+      .site-footer a {
+        color: white;
+      }
+
+      .site-footer a:hover {
+        color: pink;
+        text-decoration: none;
+      }
+
+      .list {
+        list-style-type: '>';
+        color: white;
+      }
+
+      .list:hover {
+        color: red;
+      }
+
+      ul.footer-links {
+        padding-left: 10px;
+        list-style-type: '>';
+      }
+
+      ul.footer-links li {
+        padding-left: 10px;
+        list-style-type: '>';
+      }
+
+      .footer-links a {
+        color: #737373;
+      }
+
+      .footer-links a:active,
+      .footer-links a:focus,
+      .footer-links a:hover {
+        color: orange;
+        text-decoration: none;
+      }
+
+      .footer-links.inline li {
+        display: inline-block;
+        list-style-type: '>';
+      }
+
+      .form-footer input[type="button"] {
+        border: none;
+        background: #232323;
+        color: #fff;
+        outline: none;
+        border-radius: 0 16px 0;
+        padding: 5px 12px;
+      }
+
+      .form-footer input[type="text"] {
+        border: none;
+        border-radius: 16px 0 16px;
+        outline: none;
+        padding-left: 10px;
+      }
+
+      .footer_bottom {
+        background-color: #26272b;
+        padding: 15px 0 20px;
+        font-size: 15px;
+        line-height: 24px;
+        color: #737373;
+        display: block;
+        text-align: center;
+      }
+
+      .site-footer .social-icons {
+        text-align: right;
+      }
+
+      .site-footer .social-icons a {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        margin-left: 6px;
+        margin-right: 0;
+        border-radius: 100%;
+        background-color: white;
+      }
+
+      .copyright-text {
+        margin: 0;
+        text-align: center;
+      }
+
+      .col {
+        margin-top: 0;
+        margin-left: 20px;
+        margin-bottom: auto;
+        padding: 10px;
+        display: inline-block;
+      }
+
+      .col p {
+        border: none;
+      }
+
+      .col h6 {
+        border-left: 3px solid red;
+        padding-left: 5px;
+        margin-bottom: 0%;
+      }
+
+      .col input[type=email] {
+        background-color: white;
+        border: 2px solid red;
+        border-radius: 15px;
+        border-right: none;
+        border-top-right-radius: 0%;
+        border-bottom-right-radius: 0%;
+        outline: none;
+      }
+
+
+      .col button {
+        background-color: #26272b;
+        color: white;
+        border: 2px solid red;
+        border-radius: 15px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-left: none;
+        cursor: pointer;
+      }
+
+      @media screen and (max-width: 900px) {
+        .topnav a:not(:first-child) {
+          display: none;
+        }
+
+        .topnav a.icon {
+          float: right;
+          display: block;
+        }
+      }
+
+      @media screen and (max-width: 900px) {
+        .topnav.responsive {
+          position: relative;
+        }
+
+        .topnav.responsive .icon {
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
+
+        .topnav.responsive a {
+          float: none;
+          display: block;
+          text-align: left;
+        }
+
+        .topnav.responsive {
+          float: none;
+          position: relative;
+          display: block;
+          width: 100%;
+          text-align: left;
+        }
+      }
+
+      @media screen and (max-width: 940px) {
+        .site-footer:not(.footer_bottom) {
+          float: left;
+          height: auto;
+          width: auto;
+        }
+        div.row{
+          column-count: auto;
+          height:auto;
+          width: 100%;
+        }
+      }
+      @media screen and (max-width:780px){
+        .grad{
+          display: block;
+          position: relative;
+          margin: auto;
+        }
+        .main{
+          width:auto;
+        }
+        div.frame{
+          margin: 10px auto 10px;
+        }
+        div.frame div.img img{
+          margin-left: 65px;
+        }
+        .back1{
+          height: auto;
+          padding: 10px;
+        }
+        .page{
+          display: block;
+          margin-bottom: 20px;
+        }
+      }
+      @media screen and (max-width:500px){
+        .signupSection{
+          height: auto;
+          display: block;
+          position: relative;
+        }
+        div.frame{
+          display: block;
+          margin: 10px auto 10px;
+          max-width: 100px;
+        }
+        div.frame div.img img{
+          margin-left: 0;
+        }
+        .info{
+          margin: 0px;
+          width: 100%;
+        }
+        .signupForm{
+          display: block;
+          position: relative;
+          margin: auto;
+        }
+        
+      }
+      @media screen and (max-width:430px){
+        .inputFields{
+          width: auto;
+          display: block;
+          position: relative;
+          margin: auto;
+        }
+        div.frame{
+          display: block;
+          margin: 10px auto 10px;
+          max-width: 100px;
+        }
+        div.frame div.img img{
+          margin-left: 0;
+        }
+        #center-btn{
+          display: block;
+          position: relative;
+          margin: auto;
+        }
+        .main1{
+          width: auto;
+          height: auto;
+          display: block;
+          position: relative;
+          margin: auto;
+          margin-top: 20px;
+        }
+        .back{
+          display: block;
+          margin: auto;
+        }
+        .card__header{
+          gap:0px;
+          padding:0px;
+        }
+        .cards{
+          display: block;
+          margin: auto;
+        }
+        .card{
+          display: block;
+          margin-top: 20px;
+        }
+      }
+      @media screen and (max-width:360px){
+        .main{
+          max-width:230px;
+          height: inherit;
+          display: block;
+          margin: 10px auto 10px;
+        }
+        div.container{
+          padding: 0px;
+        }
+        div.frame{
+          display: block;
+          margin: 10px auto 10px;
+          max-width: 100px;
+        }
+        div.frame div.img img{
+          margin-left: 0;
+        }
+      }
+      .fa {
+        padding: 10px;
+        font-size: 11px;
+        width: 30px;
+        text-align: center;
+        text-decoration: none;
+        margin: 0px 5px;
+        background-color: white;
+      }
+
+      .fa:hover {
+        opacity: 0.7;
+      }
+
+      .fa-facebook {
+        background: #3B5998;
+        color: white;
+      }
+
+      .fa-twitter {
+        background: #55ACEE;
+        color: white;
+      }
+
+      .fa-google {
+        background: #dd4b39;
+        color: white;
+      }
+
+      .fa-linkedin {
+        background: #007bb5;
+        color: white;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <div class="general">
+      <header>
+        <img class="albenus_icon"
+          src="./lo.png"
+          alt="albenus" />
+
+        <div class="topnav" id="myTopnav">
+          <a href="#Login" class="active">Login</a>
+          <a href="#Contact us">Contact us</a>
+          <a href="#Eligibility">Eligibility</a>
+          <a href="#Workflow">Workflow</a>
+          <a href="#Highlights">Highlights</a>
+          <a href="#Internships">Internships</a>
+          <a href="javascript:void(0);" style="font-size: 15px" class="icon" onclick="myFunction()">&#9776;</a>
+        </div>
+      </header>
+      <img class="file"
+        src="./internbanner3 (1).png" />
+      <h1>Internships</h1>
+      <div class="holder">
+        <div class="main">
+          <div class="img">
+            <img src="https://pbs.twimg.com/profile_images/1235868806079057921/fTL08u_H_400x400.png" />
+          </div>
+          <div class="container">
+            <p>
+              <strong> Spring Boot & microservices:-</strong><br />JSE,J2EE,Springboot etc..
+            </p>
+            <br />
+            <a type="submit" href="KNOWMORE.html">KNOWMORE &gt;</a>
+          </div>
+        </div>
+        <div class="main">
+          <div class="img">
+            <img src="https://pbs.twimg.com/profile_images/960980981892214785/KaSVZO2q_400x400.jpg" />
+          </div>
+          <div class="container">
+            <p>
+              <strong>Front End Developer</strong><br />React ,AWS,CSS,HTML
+              etc..
+            </p>
+            <br />
+            <a type="submit" href="KNOWMORE.html">KNOWMORE &gt;</a>
+          </div>
+        </div>
+        <div class="main">
+          <div class="img">
+            <img
+              src="https://thumbs.dreamstime.com/z/web-development-linear-icon-modern-outline-web-development-logo-web-development-linear-icon-modern-outline-web-development-logo-133525292.jpg" />
+          </div>
+          <div class="container">
+            <p>
+              <strong>Web Development</strong><br />HTML5,CSS, Bootstrap etc..
+            </p>
+            <br />
+            <a type="submit" href="KNOWMORE.html">KNOWMORE &gt;</a>
+          </div>
+        </div>
+        <div class="main">
+          <div class="img">
+            <img src="https://images.techhive.com/images/article/2015/05/aws-logo-100584713-orig.jpg" />
+          </div>
+          <div class="container">
+            <p><strong>AWS</strong><br />AWS,Linux...</p>
+            <br />
+            <a type="submit" href="KNOWMORE.html">KNOWMORE &gt;</a>
+          </div>
+        </div>
+        <div class="main">
+          <div class="img">
+            <img src="https://miro.medium.com/max/3200/1*j18U6uvAg-ta2XBvDKNQlA.jpeg" />
+          </div>
+          <div class="container">
+            <p>
+              <strong>Java Full Stack Development</strong><br />Core Java,spring
+              etc..
+            </p>
+            <br />
+            <a type="submit" href="KNOWMORE.html">KNOWMORE &gt;</a>
+          </div>
+        </div>
+        <div class="main">
+          <div class="img">
+            <img src="https://www.logolynx.com/images/logolynx/68/683f75d4c40a5b7c2f1ff598d2ed942b.png" />
+          </div>
+          <div class="container">
+            <p><strong>Dev Ops</strong><br />Python,Linux,AWS...</p>
+            <br />
+            <a type="submit" href="KNOWMORE.html">KNOWMORE &gt;</a>
+          </div>
+        </div>
+      </div>
+      <h1><span style="color: black">Key</span> Highlights</h1>
+      <div class="grad">
+        <section>
+          <div class="frame">
+            <div class="img">
+              <img src="https://image.flaticon.com/icons/png/512/4624/4624061.png" />
+            </div>
+            <div>
+              <p class="words">Safety First</p>
+              <p class="desc">Home Based Learning.</p>
+            </div>
+          </div>
+          <div class="frame">
+            <div class="img">
+              <img src="https://image.flaticon.com/icons/png/512/4624/4624044.png" />
+            </div>
+            <div>
+              <p class="words">Project Focussed</p>
+              <p class="desc">Develop Your Career.</p>
+            </div>
+          </div>
+          <div class="frame">
+            <div class="img">
+              <img src="https://image.flaticon.com/icons/png/512/4624/4624037.png" />
+            </div>
+            <div>
+              <p class="words">Projects Assignments</p>
+              <p class="desc">Gain Ample Experience</p>
+            </div>
+          </div>
+          <div class="frame">
+            <div class="img">
+              <img src="https://image.flaticon.com/icons/png/512/4624/4624121.png" />
+            </div>
+            <div>
+              <p class="words">Clarification Sessions</p>
+              <p class="desc">Multiple Q&A Forums</p>
+            </div>
+          </div>
+          <div class="frame">
+            <div class="img">
+              <img src="https://image.flaticon.com/icons/png/512/4624/4624232.png" />
+            </div>
+            <div>
+              <p class="words">Work Real Time</p>
+              <p class="desc">Tackle Projects as a Team!</p>
+            </div>
+          </div>
+          <div class="frame">
+            <div class="img">
+              <img src="https://image.flaticon.com/icons/png/512/4624/4624144.png" />
+            </div>
+            <div>
+              <p class="words">Enhance Your Career</p>
+              <p class="desc">Golden Opportunities.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+      <h1>WorkFlow</h1>
+      <div class="back">
+        <ul class="cards">
+          <li>
+            <a href="" class="card">
+              <img src="https://www.verdict.co.uk/wp-content/uploads/2021/04/shutterstock_1583248045.jpg"
+                class="card__image" alt="" />
+              <div class="card__overlay">
+                <div class="card__header">
+                  <svg class="card__arc" xmlns="">
+                    <path />
+                  </svg>
+                  <img class="card__thumb"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRo5AYIFOYE449Eb1o2BGmpZ5dkLdv518BErg&usqp=CAU"
+                    alt="" />
+                  <div class="card__header-text">
+                    <h3 class="card__title">Technology</h3>
+                  </div>
+                </div>
+                <p class="card__description">Curated video resources to enhance conceptual knowledge.</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="" class="card">
+              <img src="https://dzf8vqv24eqhg.cloudfront.net/userfiles/2086/3660/ckfinder/images/qu/Cert.jpg"
+                class="card__image" alt="" />
+              <div class="card__overlay">
+                <div class="card__header">
+                  <svg class="card__arc"></svg>
+                  <img class="card__thumb"
+                    src="https://www.nicepng.com/png/detail/847-8479973_checklist-icon-circle.png" alt="" />
+                  <div class="card__header-text">
+                    <h3 class="card__title">SELF-ASSESSMENT</h3>
+                  </div>
+                </div>
+                <p class="card__description">Frequent Multiple quizzes and tests.</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="" class="card">
+              <img src="https://www.swicktech.com/Swicktech-Files/Blogs/hands-and-gears-e1411766076516.png"
+                class="card__image" alt="" />
+              <div class="card__overlay">
+                <div class="card__header">
+                  <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                    <path />
+                  </svg>
+                  <img class="card__thumb" src="https://static.thenounproject.com/png/1876457-200.png" alt="" />
+                  <div class="card__header-text">
+                    <h3 class="card__title">HANDS-ON PRACTICE</h3>
+                  </div>
+                </div>
+                <p class="card__description">Actively work on different assignments and projects. Unique In-Browser
+                  IDE to enable coding practice.</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="" class="card">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS_qKha9ZEngiBD8BWxyaNMq_H8IeoZU5LA56AKugx8AumANjr_zE9QytYfUOYu3-IU0k&usqp=CAU"
+                class="card__image" alt="" />
+              <div class="card__overlay">
+                <div class="card__header">
+                  <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                    <path />
+                  </svg>
+                  <img class="card__thumb"
+                    src="https://i.pinimg.com/originals/99/c0/e3/99c0e3e8557fb4cf21feb1e6b8b28432.png" alt="" />
+                  <div class="card__header-text">
+                    <h3 class="card__title">OBTAIN CLARIFICATIONS</h3>
+                  </div>
+                </div>
+                <p class="card__description">Post your doubts in our Q&A Forums and gain clarifications within 24
+                  hours!</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="" class="card">
+              <img
+                src="https://content.techgig.com/photo/77565031/4-tips-for-programmers-appearing-in-coding-test-at-a-job-interview.jpg?57143"
+                class="card__image" alt="" />
+              <div class="card__overlay">
+                <div class="card__header">
+                  <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                    <path />
+                  </svg>
+                  <img class="card__thumb"
+                    src="https://cdn.iconscout.com/icon/premium/png-512-thumb/online-test-2294437-1921301.png" alt="" />
+                  <div class="card__header-text">
+                    <h3 class="card__title">FINAL ASSESSMENT</h3>
+                  </div>
+                </div>
+                <p class="card__description">Wrap up your training experience by taking our final assessment and know
+                  where you stand.</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="" class="card">
+              <img src="https://www.whizlabs.com/blog/wp-content/uploads/2019/12/importance_of_certifications.png"
+                class="card__image" alt="" />
+              <div class="card__overlay">
+                <div class="card__header">
+                  <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                    <path />
+                  </svg>
+                  <img class="card__thumb"
+                    src="https://media.istockphoto.com/vectors/approved-accept-or-certified-icon-medal-with-ribbons-and-check-mark-vector-id1136599028?k=6&m=1136599028&s=612x612&w=0&h=TlOO0GWl30ATA22JHSFBZoZItpowB4pChxhVqXpGQRg="
+                    alt="" />
+                  <div class="card__header-text">
+                    <h3 class="card__title">CERTIFICATION</h3>
+                  </div>
+                </div>
+                <p class="card__description">We provide you with a valuable certificate in Web Development upon the
+                  successful completion of the training program.</p>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <h1>Eligibility</h1>
+      <div class="back1">
+        <p class="information">
+          We are on the lookout for someone who has understood and comprehended the responsibilities, duties,
+          expectations and skills that are a part of the internship-job description.
+        </p><br>
+        <p class="information">
+          Interns in general are expected to understand the company better by working closely with members from
+          different teams and assist the company staff by undertaking duties such as research and data capturing as
+          instructed by the different teams.
+        </p>
+        <br>
+        <div class="page">
+          <div class="main1">
+            <div class="img">
+              <img class="borderless"
+                src="https://www.weetechsolution.com/upload/Technical-leader-Roles-and-responsibilities.png" />
+            </div>
+            <h2>Responsibilities</h2>
+            <div class="container1">
+              <ul style="list-style-image: url('pointer.gif');">
+                <li>Work closely with different departments to complete all the tasks assigned.</li>
+                <li>Report to supervisors upon the completion of the task and seek clarification. </li>
+                <li>Perform any research work as instructed by the supervisor.</li>
+                <li>Post regularly on social media as instructed and prepare the copy for the same.</li>
+                <li>Help with producing images for posting on social media.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="main1">
+            <div class="img">
+              <img class="borderless" src="https://miro.medium.com/max/1200/1*j5BrTcpJ-TFTl1pgHEw2ng.png" />
+            </div>
+            <h2>Requirements</h2>
+            <div class="container1">
+              <ul style="list-style-image: url('pointer.gif');">
+                <li>Final year undergraduate students or recent graduates. </li>
+                <li>Willingness to work with different departments in the company.</li>
+                <li>Appreciable communication skills-verbal and written.</li>
+                <li>Proficient in Microsoft Office.</li>
+                <li>Ability to handle multiple tasks in one go.</li>
+                <li>Must be someone who thrives under pressure.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="signupSection">
+        <div class="info">
+          <h2>Intern with us</h2>
+          <i class="icon ion-ios-ionic-outline" aria-hidden="true"></i>
+          <p>This internship has been carefully planned out so as to enable the interns with maximal skills in a
+            limited period of time whilst also focusing on their Social Emotional Learning (SEL).</p>
+        </div>
+        <form action="#" method="POST" class="signupForm" name="signupform">
+          <ul class="noBullet">
+            <li>
+              <label for="Name"></label>
+              <input type="Name" class="inputFields" id="Name" name="Name" placeholder="Name" value=""
+                oninput="return NameValidation(this.value)" required />
+            </li>
+            <li>
+              <label for="Number"></label>
+              <input type="number" class="inputFields" id="number" name="number" placeholder="Phone Number" value=""
+                oninput="return numberValidation(this.value)" required />
+            </li>
+            <li>
+              <label for="email"></label>
+              <input type="email" class="inputFields" id="email" name="email" placeholder="Email" value="" required />
+            </li>
+            <li>
+              <label for="Message"></label>
+              <textarea class="inputFields" id="Message" name="Message" placeholder="Message" value=""
+                required></textarea>
+            </li>
+            <li id="center-btn">
+              <input type="submit" id="join-btn" name="join" alt="Submit" value="Submit">
+            </li>
+          </ul>
+        </form>
+      </div>
+      <footer class="site-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <h6>Contact Us</h6>
+              <p style="border: none;color:white;">Manjeera Trinity Corporate, Hyderabad- 500072, Telangana, India.</p>
+              <br>
+              <a>careers@albenus.com</a><br>
+              <a>info@albenus.com</a>
+            </div><br>
+
+            <div class="col">
+              <h6 style="display: inline-block;">Usefull Links</h6>
+              <ul class="footer-links">
+                <li class="list" href="#"> Internships</li>
+                <li class="list" href="#"> Highlights</li>
+                <li class="list" href="#"> WorkFlow</li>
+                <li class="list" href="#"> Eligibility</li>
+              </ul>
+            </div>
+            <div class="col">
+              <h6>Legal</h6>
+              <ul class="footer-links">
+                <li class="list" href="#Internships"> Contact Us</li>
+                <li class="list" href="#Highlights"> Terms & Conditions</li>
+                <li class="list" href="#Workflow"> Privacy policy</li>
+              </ul>
+            </div>
+            <div class="col">
+              <h6 style="margin-bottom: 15px;">Newsletter</h6>
+              <form class="form-footer ">
+                <input type="text" placeholder="enter your email...." name="search"><br>
+                <input type="button" value="Subscribe">
+              </form>
+            </div>
+            <div class="col">
+              <h6>We are Social</h6>
+              <div class="s_icons">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-google"></a>
+                <a href="#" class="fa fa-linkedin"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <div class="footer_bottom">
+        <p style="border: none;" class="copyright-text">Copyright &copy; 2021 All Rights Reserved by
+          <a href="#">Albenus</a>.
+        </p>
+      </div>
+    </div>
+    <script>
+      function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+      var alertRedInput = "#8C1010";
+      var defaultInput = "rgba(10, 180, 180, 1)";
+
+      function NameValidation(NameInput) {
+        var name = document.getElementById("Name");
+        var issueArr = [];
+        if (/[-!@#$%^&*()_+|~=`{}\[\]:";'<>?,.\/]/.test(NameInput)) {
+          issueArr.push("No special characters!");
+        }
+        if (issueArr.length > 0) {
+          Name.setCustomValidity(issueArr);
+          Name.style.borderColor = alertRedInput;
+        } else {
+          Name.setCustomValidity("");
+          Name.style.borderColor = defaultInput;
+        }
+      }
+
+      function numberValidation(NumberInput) {
+        var number = document.getElementById("number");
+        var issueArr = [];
+        if (!/^.{10}$/.test(NumberInput)) {
+          issueArr.push("Phone number must be 10 digits");
+        }
+        if (!/\d/.test(passwordInput)) {
+          issueArr.push("Enter Phone number");
+        }
+        if (/[a-z A-Z]/.test(passwordInput)) {
+          issueArr.push("Enter only numbers");
+        }
+
+      }
+    </script>
+  </body>
+
+</html>
